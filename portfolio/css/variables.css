@@ -1,0 +1,81 @@
+:root {
+  --color-bg: #0a0a0f;
+  --color-bg-elevated: #11111a;
+  --color-surface: #12121a;
+  --color-surface-hover: #1a1a24;
+  --color-deep-black: #050510;
+  --color-dark-navy: #0d0d1e;
+  --color-dark-blue: #141624;
+  --color-electric-blue: #3b82f6;
+  --color-electric-blue-dim: #3b82f633;
+  --color-neon-purple: #a855f7;
+  --color-neon-purple-dim: #a855f733;
+  --color-cyan: #06d6a0;
+  --color-cyan-dim: #06d6a033;
+  --color-primary: #00d4aa;
+  --color-primary-dim: #00d4aa33;
+  --color-secondary: #8b5cf6;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-text-light: #e4e4e7;
+  --color-border: #27273a;
+  --color-border-hover: #3f3f5a;
+  --color-border-subtle: #4a4a6a;
+  --color-shadow: #00000080;
+  --color-shadow-glow: #00d4aa33;
+  --color-shadow-neon: #a855f733;
+
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'system-ui', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --fs-display: clamp(4rem, 3.5rem + 4vw, 6rem);
+  --fs-h1: clamp(3rem, 2.5rem + 3vw, 4rem);
+  --fs-h2: clamp(2rem, 1.7rem + 2vw, 2.75rem);
+  --fs-h3: clamp(1.5rem, 1.3rem + 1.5vw, 2rem);
+  --fs-body-large: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+  --fs-body: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem);
+  --fs-small: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+
+  --fs-xs: 0.7rem;
+  --fs-sm: 0.8125rem;
+  --fs-md: 1rem;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px var(--color-shadow);
+  --shadow-md: 0 4px 12px var(--color-shadow);
+  --shadow-lg: 0 12px 32px var(--color-shadow);
+  --shadow-xl: 0 24px 64px var(--color-shadow);
+  --shadow-neon: 0 0 40px var(--color-shadow-glow);
+
+  --transition-fast: 150ms ease-out;
+  --transition-base: 250ms ease-out;
+  --transition-slow: 400ms ease-out;
+  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+
+  --container-max: 1280px;
+  --container-padding: var(--space-lg);
+
+  --header-height: 72px;
+}

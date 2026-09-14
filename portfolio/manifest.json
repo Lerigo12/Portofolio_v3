@@ -1,0 +1,38 @@
+{
+  "name": "Achmad Naufal Ilhamdy - Portfolio",
+  "short_name": "AN Portfolio",
+  "description": "Full Stack Web Developer & UI/UX Designer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["developer", "portfolio", "technology"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "#projects",
+      "description": "View featured projects"
+    },
+    {
+      "name": "Contact",
+      "url": "#contact",
+      "description": "Get in touch"
+    }
+  ]
+}

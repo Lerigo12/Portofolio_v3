@@ -1,0 +1,9 @@
+# Robots.txt for Achmad Naufal Ilhamdy Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

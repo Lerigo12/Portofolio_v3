@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Achmad Naufal Ilhamdy - Full Stack Web Developer & UI/UX Designer. Building digital experiences through code, design, and innovation.">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Achmad Naufal Ilhamdy UI/UX Designer</title>
+  <link rel="canonical" href="https://your-domain.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/">
+  <meta property="og:title" content="Achmad Naufal Ilhamdy | UI/UX Designer">
+  <meta property="og:description" content="Building digital experiences through code, design, and innovation. Full Stack Web Developer & UI/UX Designer.">
+  <meta property="og:image" content="https://your-domain.com/assets/images/og-image.png">
+  <meta property="og:site_name" content="Achmad Naufal Ilhamdy Portfolio">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-domain.com/">
+  <meta property="twitter:title" content="Achmad Naufal Ilhamdy |UI/UX Designer">
+  <meta property="twitter:description" content="Building digital experiences through code, design, and innovation.">
+  <meta property="twitter:image" content="https://your-domain.com/assets/images/og-image.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Achmad Naufal Ilhamdy",
+    "jobTitle": "UI/UX Designer",
+    "url": "https://your-domain.com/",
+    "image": "https://your-domain.com/assets/images/profile.jpg",
+    "sameAs": [
+      "https://github.com/Lerigo12",
+      "https://www.instagram.com/nooppaal_/",
+      "mailto:achmadnaufal124@gmail.com"
+    ],
+    "knowsAbout": [
+      "HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "MariaDB",
+      "Python", "Machine Learning", "NLP", "Figma", "Adobe Illustrator"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    }
+  }
+  </script>
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" as="script">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js" as="script">
+  <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com" crossorigin type="font/woff2">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Skip Link -->
+  <style>
+    .skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); padding: 0.5rem 1rem; background: var(--color-primary); color: var(--color-bg); border-radius: 9999px; font-family: var(--font-mono); font-size: 0.75rem; z-index: 99999; }
+    .skip-link:focus { top: 1rem; }
+  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Icons (Lucide) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Skip to main -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen" aria-hidden="true" aria-live="polite">
+    <div class="loading-screen__inner">
+      <div class="loading-screen__progress">
+        <div class="loading-screen__bar">
+          <div class="loading-screen__fill" id="loading-fill"></div>
+        </div>
+        <div class="loading-screen__stats">
+          <span class="loading-screen__label">INITIALIZING PORTFOLIO</span>
+          <span class="loading-screen__percentage" id="loading-percentage">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+      <a href="#home" class="header__logo" aria-label="Achmad Naufal Ilhamdy - Home">AN<span aria-hidden="true">.</span></a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav" id="nav-desktop" aria-label="Main navigation">
+        <a href="#home" class="nav__link nav__link--active" data-section="home">Home</a>
+        <a href="#about" class="nav__link" data-section="about">About</a>
+        <a href="#skills" class="nav__link" data-section="skills">Skills</a>
+        <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+        <a href="#journey" class="nav__link" data-section="journey">Journey</a>
+        <a href="#contact" class="nav__link" data-section="contact">Contact</a>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav__toggle-line" aria-hidden="true"></span>
+        <span class="nav__toggle-line" aria-hidden="true"></span>
+        <span class="nav__toggle-line" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav__mobile" id="nav-mobile" aria-label="Mobile navigation" hidden>
+      <div class="nav__mobile-inner">
+        <a href="#home" class="nav__mobile-link" data-section="home">Home</a>
+        <a href="#about" class="nav__mobile-link" data-section="about">About</a>
+        <a href="#skills" class="nav__mobile-link" data-section="skills">Skills</a>
+        <a href="#projects" class="nav__mobile-link" data-section="projects">Projects</a>
+        <a href="#journey" class="nav__mobile-link" data-section="journey">Journey</a>
+        <a href="#contact" class="nav__mobile-link" data-section="contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero__bg">
+      <div class="bg-gradient-move"></div>
+      <div class="bg-orb bg-orb--1"></div>
+      <div class="bg-orb bg-orb--2"></div>
+      <div class="bg-orb bg-orb--3"></div>
+      <div class="hero__grid"></div>
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+    </div>
+    <div class="container hero__content">
+      <p class="hero__label" aria-hidden="true">HELLO, I'M</p>
+      <h1 class="hero__title">Achmad Naufal Ilhamdy</h1>
+      <p class="hero__role"></p>
+        <span class="hero__role-line">UI/UX Designer</span>
+      </p>
+      <p class="hero__description">Building Digital Experiences Through Code, Design, and Innovation.</p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary btn--lg">VIEW MY PROJECTS</a>
+        <a href="#contact" class="btn btn--secondary btn--lg">CONTACT ME</a>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-text">SCROLL</span>
+        <svg class="hero__scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" tabindex="-1">
+
+    <!-- About Section -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__visual">
+            <div class="about__image-wrapper">
+              <div class="about__image-frame" id="profile-frame">
+                <img loading="lazy" src="assets/images/Profile.jpeg" alt="Achmad Naufal Ilhamdy - Full Stack Web Developer & UI/UX Designer" width="400" height="400" class="about__profile-image">
+              </div>
+              <div class="about__glow-orb about__glow-orb--1" aria-hidden="true"></div>
+              <div class="about__glow-orb about__glow-orb--2" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="about__content">
+            <p class="about__label" aria-hidden="true">01 — ABOUT ME</p>
+            <h2 class="about__title" id="about-title">Building Digital Experiences With Passion</h2>
+            <p class="about__description">
+              Saya adalah seorang  UI/UX Designer yang fokus Mendesain dan membangun aplikasi digital modern dengan kombinasi teknologi, desain, dan pengalaman pengguna. Saya memiliki ketertarikan dalam:
+            </p>
+            <div class="about__interests" role="list" aria-label="Interests">
+              <span class="about__interest" role="listitem">UI/UX Design</span>
+            </div>
+            <div class="about__stats" role="list" aria-label="Statistics">
+              <div class="about__stat" role="listitem">
+                <span class="about__stat-value" data-target="2" data-suffix="+" aria-live="polite">0</span>
+                <span class="about__stat-label">Projects</span>
+              </div>
+              <div class="about__stat" role="listitem">
+                <span class="about__stat-value about__stat-value--cyan" data-target="10" data-suffix="+" aria-live="polite">0</span>
+                <span class="about__stat-label">Technologies</span>
+              </div>
+              <div class="about__stat" role="listitem">
+                <span class="about__stat-value about__stat-value--purple" data-target="100" data-suffix="%" aria-live="polite">0</span>
+                <span class="about__stat-label">Passion</span>
+              </div>
+            </div>
+            <div class="about__cta">
+              <a href="#projects" class="btn btn--primary">VIEW MY WORK</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="skills__header">
+          <p class="skills__label" aria-hidden="true">02 — TECH STACK</p>
+          <h2 class="skills__title" id="skills-title">Technologies I Work With</h2>
+          <p class="skills__subtitle">A curated selection of tools and technologies I use to bring ideas to life.</p>
+        </div>
+
+        <div class="skills__categories" role="group" aria-label="Filter skills by category">
+          <button class="skills__category is-active" data-category="all" aria-pressed="true" type="button">All</button>
+          <button class="skills__category" data-category="frontend" aria-pressed="false" type="button">Frontend</button>
+          <button class="skills__category" data-category="backend" aria-pressed="false" type="button">Backend</button>
+          <button class="skills__category" data-category="programming" aria-pressed="false" type="button">Programming</button>
+          <button class="skills__category" data-category="design" aria-pressed="false" type="button">Design</button>
+        </div>
+
+        <div class="skills__grid" id="skills-grid">
+          <!-- FRONTEND -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="file-code"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">HTML</span>
+              <span class="skill-card__desc">Semantic markup and accessible structure for modern web pages.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="palette"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">CSS</span>
+              <span class="skill-card__desc">Responsive layouts, animations, and modern styling techniques.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="terminal"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">JavaScript</span>
+              <span class="skill-card__desc">Interactive web applications, DOM manipulation, and modern ES6+.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BACKEND -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="server"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">PHP</span>
+              <span class="skill-card__desc">Server-side scripting and dynamic web application development.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="layers"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">Laravel</span>
+              <span class="skill-card__desc">Elegant PHP framework for robust backend architecture.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="database"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">MySQL</span>
+              <span class="skill-card__desc">Relational database design, queries, and optimization.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="database"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">CI</span>
+              <span class="skill-card__desc">A PHP-based web application development framework that is open-source
+                and uses the Model-View-Controller (MVC) architecture.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROGRAMMING -->
+          <div class="skill-card" data-category="programming">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="code-2"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">PHP</span>
+              <span class="skill-card__desc">Turn static web pages into dynamic by customizing content in real-time based on user input.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DESIGN -->
+          <div class="skill-card" data-category="design">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="pen-tool"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">Figma</span>
+              <span class="skill-card__desc">Collaborative interface design and prototyping tool.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="design">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="brush"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">Adobe Illustrator</span>
+              <span class="skill-card__desc">Vector graphics and digital illustration expertise.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="design">
+            <div class="skill-card__icon" aria-hidden="true">
+              <i data-lucide="brush"></i>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">Canva</span>
+              <span class="skill-card__desc">User-friendly design tool for creating graphics and presentations.</span>
+              <div class="skill-card__level" aria-hidden="true">
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot is-filled"></span>
+                <span class="skill-card__level-dot"></span>
+                <span class="skill-card__level-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="projects__header">
+          <p class="projects__label" aria-hidden="true">03 — FEATURED PROJECTS</p>
+          <h2 class="projects__title" id="projects-title">Selected Works</h2>
+          <p class="projects__subtitle">A showcase of projects that demonstrate my expertise across the stack.</p>
+        </div>
+
+        <div class="projects__grid">
+          <!-- Project 1: CALF -->
+          <article class="project-card" data-project-id="calf">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <p class="project-card__category">Prototype desain web aplikasi calf</p>
+              <h3 class="project-card__title">CALF</h3>
+              <p class="project-card__description">Sistem digitalisasi Calf untuk membantu pengelolaan pembelian customer.</p>
+
+              <p class="project-card__features-label" id="calf-features">Features</p>
+              <div class="project-card__features" aria-labelledby="calf-features">
+                <span class="project-card__feature">Multi Role Auth</span>
+                <span class="project-card__feature">Super Admin</span>
+                <span class="project-card__feature">customer</span>
+                <span class="project-card__feature">Pendataan Barang</span>
+                <span class="project-card__feature">Pembayaran barang</span>
+                <span class="project-card__feature">Payment Gateway</span>
+                <span class="project-card__feature">Monitoring Keuangan</span>
+              </div>
+
+              <p class="project-card__features-label" id="calf-tech">Technology</p>
+              <div class="project-card__tech" aria-labelledby="calf-tech">
+                <span class="project-card__tech-badge">Figma</span>
+              </div>
+
+              <div class="project-card__actions">
+                <a href="https://www.figma.com/design/BWW4xEoQ0N0GIXdCIbRvbH/PROTOTYPE?node-id=0-1&t=MQ331s8ALLWpzKLH-1" class="btn btn--primary project-view-btn" target="_blank" rel="noopener" aria-label="View CALF prototype on Figma">VIEW PROJECT</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: SENTIMENT ANALYSIS SHOPEE -->
+          <article class="project-card" data-project-id="sentiment-analysis">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <p class="project-card__category">Machine Learning</p>
+              <h3 class="project-card__title">SENTIMENT ANALYSIS SHOPEE</h3>
+              <p class="project-card__description">Sistem analisis sentimen ulasan pengguna menggunakan Machine Learning dan Natural Language Processing.</p>
+
+              <p class="project-card__features-label" id="senti-features">Features</p>
+              <div class="project-card__features" aria-labelledby="senti-features">
+                <span class="project-card__feature">Text Preprocessing</span>
+                <span class="project-card__feature">Case Folding</span>
+                <span class="project-card__feature">Tokenizing</span>
+                <span class="project-card__feature">Stopword Removal</span>
+                <span class="project-card__feature">Normalisasi</span>
+                <span class="project-card__feature">Stemming</span>
+                <span class="project-card__feature">TF-IDF</span>
+                <span class="project-card__feature">Naive Bayes</span>
+                <span class="project-card__feature">SVM</span>
+                <span class="project-card__feature">Confusion Matrix</span>
+                <span class="project-card__feature">Accuracy</span>
+                <span class="project-card__feature">Precision &amp; Recall</span>
+                <span class="project-card__feature">F1 Score</span>
+              </div>
+
+              <p class="project-card__features-label" id="senti-tech">Technology</p>
+              <div class="project-card__tech" aria-labelledby="senti-tech">
+                <span class="project-card__tech-badge">Python</span>
+                <span class="project-card__tech-badge">Google Colab</span>
+                <span class="project-card__tech-badge">Machine Learning</span>
+                <span class="project-card__tech-badge">NLP</span>
+              </div>
+
+              <div class="project-card__actions">
+                <a href="https://colab.research.google.com/drive/1Oh-3nowx2LQ7AxK8iqXJ6SLiPavROWO4?usp=sharing" class="btn btn--primary project-view-btn" target="_blank" rel="noopener" aria-label="View Sentiment Analysis project on Google Colab">VIEW PROJECT</a>
+                <a href="https://github.com/Lerigo12/Perbandingan-akurasi-algoritma-naive-bayes-dan-support-verctor-machine-dalam-analisis-sentimen-.git" class="btn btn--secondary project-view-btn" target="_blank" rel="noopener" aria-label="View Sentiment Analysis source code on GitHub">GITHUB</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="journey__header">
+          <p class="journey__label" aria-hidden="true">04 — MY JOURNEY</p>
+          <h2 class="journey__title" id="journey-title">The Path I've Walked</h2>
+          <p class="journey__subtitle">A timeline of experiences, challenges, and growth that shaped who I am today.</p>
+        </div>
+
+        <div class="journey__timeline" role="list">
+          <div class="journey__item" role="listitem">
+            <div class="journey__dot" aria-hidden="true"></div>
+            <div class="journey__content">
+              <p class="journey__year">2024</p>
+              <h3 class="journey__title-card">PDIP Perjuangan</h3>
+              <p class="journey__role">Admin</p>
+              <time class="journey__date" datetime="2024-01/2024-03">Jan 2024 - Mar 2024</time>
+              <p class="journey__description">Team Input Pemilihan Presiden (PILPRES) Walikota Bekasi Fraksi PDIP</p>
+              <p class="journey__tasks-label">Responsibilities</p>
+              <p class="journey__task">Memasukan hasil data pungutan suara dari TPS ke Google Sheets</p>
+            </div>
+          </div>
+
+          <div class="journey__item" role="listitem">
+            <div class="journey__dot" aria-hidden="true"></div>
+            <div class="journey__content">
+              <p class="journey__year">2024</p>
+              <h3 class="journey__title-card">PDIP Perjuangan</h3>
+              <p class="journey__role">Admin</p>
+              <time class="journey__date" datetime="2024-08/2024-11">Aug 2024 - Nov 2024</time>
+              <p class="journey__description">Team Input pemilihan kepala daerah (PILKADA) Walikota Bekasi Fraksi PDIP</p>
+              <p class="journey__tasks-label">Responsibilities</p>
+              <p class="journey__task">Memasukan hasil data pungutan suara dari TPS ke Google Sheets</p>
+            </div>
+          </div>
+
+          <div class="journey__item" role="listitem">
+            <div class="journey__dot" aria-hidden="true"></div>
+            <div class="journey__content">
+              <p class="journey__year">2025</p>
+              <h3 class="journey__title-card">PT. Solusi Inspirasi Mandiri</h3>
+              <p class="journey__role">Admin</p>
+              <time class="journey__date" datetime="2025-09/2025-11">Sep 2025 - Nov 2025</time>
+              <p class="journey__description">Pengembangan sistem dan dokumentasi pelatihan kerja</p>
+              <p class="journey__tasks-label">Responsibilities</p>
+              <p class="journey__task">Membuat jadwal kerja</p>
+              <p class="journey__task">Membuat Modul pelatihan kerja K3</p>
+            </div>
+          </div>
+
+          <div class="journey__item" role="listitem">
+            <div class="journey__dot" aria-hidden="true"></div>
+            <div class="journey__content">
+              <p class="journey__year">2026</p>
+              <h3 class="journey__title-card">Machine Learning &amp; NLP</h3>
+              <p class="journey__role">Self-Directed Learning</p>
+              <time class="journey__date">Ongoing</time>
+              <p class="journey__description">Studi lanjutan dalam bidang Machine Learning dan Natural Language Processing</p>
+              <div class="journey__highlight">Google Colab + Python</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech World Section -->
+    <section class="tech-world" id="tech-world" aria-label="3D Technology World">
+      <div class="container">
+        <div class="tech-world__header">
+          <p class="tech-world__label">05 — EXPLORE MY TECH WORLD</p>
+          <h2 class="tech-world__title">The Technologies I Build With</h2>
+          <p class="tech-world__subtitle">Hover over the floating objects to discover each technology.</p>
+        </div>
+        <div class="tech-world__scene" id="tech-world-scene"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__header">
+          <p class="contact__label" aria-hidden="true">06 — CONTACT</p>
+          <h2 class="contact__title" id="contact-title">Let&#39;s Build Something Amazing</h2>
+          <p class="contact__description">Have an idea or project in mind? Let&#39;s create something amazing together.</p>
+        </div>
+
+        <div class="contact__layout">
+          <div class="contact__info">
+            <h3 class="contact__info-title">Get in Touch</h3>
+            <p class="contact__info-text">I&#39;m always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.</p>
+            <div class="contact__social">
+              <a href="https://github.com/Lerigo12" target="_blank" rel="noopener" class="contact__social-link" aria-label="GitHub - Achmad Naufal Ilhamdy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/nooppaal_/?hl=en" target="_blank" rel="noopener" class="contact__social-link" aria-label="Instagram - Achmad Naufal Ilhamdy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="mailto:achmadnaufal124@gmail.com" class="contact__social-link" aria-label="Email Achmad Naufal Ilhamdy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__form-wrapper">
+            <form class="contact__form" id="contact-form" novalidate>
+              <div class="contact__field">
+                <label class="contact__field-label" for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="from_name" class="contact__field-input" placeholder="Your name" required autocomplete="name" aria-describedby="err-name">
+                <span class="contact__field-error" id="err-name" aria-live="polite">Name is required</span>
+              </div>
+              <div class="contact__field">
+                <label class="contact__field-label" for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="from_email" class="contact__field-input" placeholder="your@email.com" required autocomplete="email" aria-describedby="err-email">
+                <span class="contact__field-error" id="err-email" aria-live="polite">Please enter a valid email</span>
+              </div>
+              <div class="contact__field">
+                <label class="contact__field-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="contact__field-input" placeholder="What is this about?" required aria-describedby="err-subject">
+                <span class="contact__field-error" id="err-subject" aria-live="polite">Subject is required</span>
+              </div>
+              <div class="contact__field">
+                <label class="contact__field-label" for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" class="contact__field-input contact__field-textarea" placeholder="Tell me about your project..." required aria-describedby="err-message"></textarea>
+                <span class="contact__field-error" id="err-message" aria-live="polite">Message is required</span>
+              </div>
+              <button type="submit" class="contact__submit">
+                <span>SEND MESSAGE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </form>
+            <div class="contact__success" id="contact-success" role="status" aria-live="polite">
+              <div class="contact__success-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <h3 class="contact__success-title">Message Sent!</h3>
+              <p class="contact__success-text">Thank you for reaching out. I&#39;ll get back to you soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal-container"></div>
+
+  <!-- Status Indicator -->
+  <div class="status">
+    <div class="status__dot" aria-hidden="true"></div>
+    <span>Available for new projects</span>
+  </div>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
+
+  <!-- Main JavaScript -->
+  <script type="module" src="js/main.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <p class="footer__name">Achmad Naufal Ilhamdy</p>
+          <p class="footer__role">UI/UX Designer</p>
+        </div>
+        <div class="footer__social">
+          <a href="https://github.com/Lerigo12" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub - Achmad Naufal Ilhamdy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/nooppaal_/?hl=en" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram - Achmad Naufal Ilhamdy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="mailto:achmadnaufalil124@gmail.com" class="footer__social-link" aria-label="Email Achmad Naufal Ilhamdy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Achmad Naufal Ilhamdy. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- EmailJS (must load before main.js for contact form) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</body>
+</html>
