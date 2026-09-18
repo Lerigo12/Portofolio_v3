@@ -113,6 +113,8 @@
         <a href="#skills" class="nav__link" data-section="skills">Skills</a>
         <a href="#projects" class="nav__link" data-section="projects">Projects</a>
         <a href="#journey" class="nav__link" data-section="journey">Journey</a>
+        <a href="#tech-world" class="nav__link" data-section="tech-world">Tech World</a>
+        <a href="#certificates" class="nav__link" data-section="certificates">Certificates</a>
         <a href="#contact" class="nav__link" data-section="contact">Contact</a>
       </nav>
 
@@ -132,6 +134,8 @@
         <a href="#skills" class="nav__mobile-link" data-section="skills">Skills</a>
         <a href="#projects" class="nav__mobile-link" data-section="projects">Projects</a>
         <a href="#journey" class="nav__mobile-link" data-section="journey">Journey</a>
+        <a href="#tech-world" class="nav__mobile-link" data-section="tech-world">Tech World</a>
+        <a href="#certificates" class="nav__mobile-link" data-section="certificates">Certificates</a>
         <a href="#contact" class="nav__mobile-link" data-section="contact">Contact</a>
       </div>
     </nav>
@@ -441,12 +445,8 @@
           <article class="project-card" data-project-id="calf">
             <div class="project-card__image" aria-hidden="true">
               <div class="project-card__image-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
               </div>
+              <img src="assets/images/Calf.png" alt="CALF Project" class="project-card__image-img" loading="lazy">
             </div>
             <div class="project-card__body">
               <p class="project-card__category">Prototype desain web aplikasi calf</p>
@@ -601,11 +601,44 @@
       </div>
     </section>
 
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates" aria-labelledby="certificates-title">
+      <div class="container">
+        <div class="certificates__header">
+          <p class="certificates__label" aria-hidden="true">06 — CERTIFICATIONS</p>
+          <h2 class="certificates__title" id="certificates-title">Certifications &amp; Achievements</h2>
+          <p class="certificates__subtitle">Verified credentials and professional certifications I hold.</p>
+        </div>
+        <div class="certificates__grid">
+          <div class="certificate-card">
+            <div class="certificate-card__image">
+              <img src="assets/images/Sertifikat_IAII_page-0001.jpg" alt="Certificate 1" loading="lazy">
+            </div>
+            <div class="certificate-card__body">
+              <h3 class="certificate-card__title">Certificate Title</h3>
+              <p class="certificate-card__issuer">Issuing Organization</p>
+              <p class="certificate-card__date">Date</p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-card__image">
+              <img src="assets/images/Serkom.jpg" alt="Certificate 2" loading="lazy">
+            </div>
+            <div class="certificate-card__body">
+              <h3 class="certificate-card__title">Certificate Title</h3>
+              <p class="certificate-card__issuer">Issuing Organization</p>
+              <p class="certificate-card__date">Date</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact__header">
-          <p class="contact__label" aria-hidden="true">06 — CONTACT</p>
+          <p class="contact__label" aria-hidden="true">07 — CONTACT</p>
           <h2 class="contact__title" id="contact-title">Let&#39;s Build Something Amazing</h2>
           <p class="contact__description">Have an idea or project in mind? Let&#39;s create something amazing together.</p>
         </div>
@@ -684,12 +717,6 @@
 
   <!-- Project Detail Modal -->
   <div id="project-modal-container"></div>
-
-  <!-- Status Indicator -->
-  <div class="status">
-    <div class="status__dot" aria-hidden="true"></div>
-    <span>Available for new projects</span>
-  </div>
 
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
