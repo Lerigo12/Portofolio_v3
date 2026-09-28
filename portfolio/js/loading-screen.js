@@ -51,12 +51,24 @@ export function initNavbar() {
 
   if (!header || !navToggle || !navMobile) return;
 
+  let lastScrollY = window.scrollY;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
+
+    if (currentScrollY > lastScrollY && currentScrollY > 200) {
+      header.classList.add('header-hidden');
+    } else {
+      header.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScrollY;
   }, { passive: true });
 
   function closeMobileMenu() {
