@@ -95,25 +95,4 @@
   --header-height: 68px;
 }
 
-/* Light mode — same accent, inverted surfaces */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #f3f3f0;
-    --color-bg-elevated: #ffffff;
-    --color-surface: #ebebe6;
-    --color-surface-hover: #e2e2dc;
-    --color-deep-black: #e8e8e4;
-    --color-primary: #1f7a70;
-    --color-primary-hover: #18665e;
-    --color-primary-dim: rgba(31, 122, 112, 0.12);
-    --color-primary-ink: #f3f3f0;
-    --color-text-primary: #141416;
-    --color-text-secondary: #4a4a52;
-    --color-text-muted: #72727a;
-    --color-text-light: #2a2a30;
-    --color-border: #d4d4ce;
-    --color-border-hover: #b8b8b0;
-    --color-border-subtle: #c8c8c0;
-    --color-shadow: rgba(20, 20, 24, 0.1);
-  }
-}
+/* Dark theme locked to match brand. No auto light-mode flip. */

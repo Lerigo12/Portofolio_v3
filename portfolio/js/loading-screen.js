@@ -25,10 +25,12 @@ export function initLoadingScreen(onComplete) {
     if (progress >= 100) {
       clearInterval(interval);
       setTimeout(() => {
+        loadingScreen.classList.add('is-done');
         loadingScreen.style.opacity = '0';
         loadingScreen.style.pointerEvents = 'none';
         setTimeout(() => {
           loadingScreen.setAttribute('aria-hidden', 'true');
+          loadingScreen.style.display = 'none';
           document.body.style.overflow = '';
           if (onComplete) onComplete();
         }, 600);
