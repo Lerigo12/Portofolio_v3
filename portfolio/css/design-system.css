@@ -1,15 +1,13 @@
 /**
- * Design System - Reusable UI Components & Tokens
- * Adheres to high-end design engineering standards.
+ * Design System — typography utilities + shared components
  */
 
-/* Typography Utility Classes */
 .typography-display {
   font-family: var(--font-display);
   font-size: var(--fs-display);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 .typography-h1 {
@@ -23,8 +21,8 @@
 .typography-h2 {
   font-family: var(--font-display);
   font-size: var(--fs-h2);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   line-height: 1.15;
 }
 
@@ -39,14 +37,14 @@
 .typography-body-large {
   font-family: var(--font-body);
   font-size: var(--fs-body-large);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--color-text-secondary);
 }
 
 .typography-body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--color-text-secondary);
 }
 
@@ -57,20 +55,20 @@
   color: var(--color-text-muted);
 }
 
-/* Reusable UI Components */
 .glass-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  backdrop-filter: blur(16px) saturate(1.4);
-  box-shadow: var(--shadow-lg);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 
 .glass-card:hover {
   border-color: var(--color-border-hover);
-  box-shadow: var(--shadow-xl), var(--shadow-glow);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
@@ -78,39 +76,36 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.35rem 0.85rem;
+  padding: 0.35rem 0.75rem;
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   color: var(--color-text-secondary);
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
 }
 
 .tech-badge:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
-  background: var(--color-primary-dim);
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-cyan) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.accent-text {
+  color: var(--color-primary);
 }
 
-/* Background Systems */
 .bg-grid-pattern {
-  background-image: linear-gradient(var(--color-border) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.35;
 }
 
 .bg-radial-vignette {
-  background: radial-gradient(circle at 50% 30%, transparent 20%, var(--color-bg) 80%);
+  background: radial-gradient(circle at 50% 20%, transparent 10%, var(--color-bg) 75%);
 }

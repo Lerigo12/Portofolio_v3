@@ -32,43 +32,33 @@ export function initAnimations() {
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // Hero label with opacity + translateY
+  if (prefersReducedMotion()) {
+    gsap.set(['.hero__label', '.hero__title-line', '.hero__role', '.hero__description', '.hero__actions', '.hero__portrait'], {
+      opacity: 1, clearProps: 'transform',
+    });
+    return;
+  }
+
   tl.from('.hero__label', {
-    opacity: 0, y: 24, duration: 0.7, delay: 0.3,
-    willChange: 'transform, opacity',
+    opacity: 0, y: 20, duration: 0.6, delay: 0.2,
   })
-  // Hero title lines with stagger
   .from('.hero__title-line', {
-    opacity: 0, y: 40, duration: 0.8, stagger: 0.12, delay: 0.1,
+    opacity: 0, y: 36, duration: 0.75, stagger: 0.1,
     ease: 'power3.out',
-    willChange: 'transform, opacity',
-  }, '-=0.4')
-  // Role with subtle scale
+  }, '-=0.35')
   .from('.hero__role', {
-    opacity: 0, y: 20, duration: 0.6, delay: 0.1,
-    scale: 0.97, willChange: 'transform, opacity',
-  }, '-=0.3')
-  // Description
+    opacity: 0, y: 16, duration: 0.55,
+  }, '-=0.35')
   .from('.hero__description', {
-    opacity: 0, y: 20, duration: 0.6, delay: 0.05,
-    willChange: 'transform, opacity',
-  }, '-=0.2')
-  // Actions with scale
+    opacity: 0, y: 16, duration: 0.55,
+  }, '-=0.3')
   .from('.hero__actions', {
-    opacity: 0, y: 20, duration: 0.6, delay: 0.05,
-    scale: 0.98, willChange: 'transform, opacity',
-  }, '-=0.2')
-  // Scroll indicator
-  .from('.hero__scroll', {
-    opacity: 0, y: 12, duration: 0.5, delay: 0.1,
-    willChange: 'transform, opacity',
-  }, '-=0.2')
-  // Parallax: grid moves slowly
-  .from('.hero__grid', {
-    y: 30, opacity: 0.4, duration: 1.5, ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
-    willChange: 'transform, opacity',
-  }, '-=0.5');
+    opacity: 0, y: 16, duration: 0.55,
+  }, '-=0.25')
+  .from('.hero__portrait', {
+    opacity: 0, y: 28, scale: 0.97, duration: 0.9,
+    ease: 'power3.out',
+  }, '-=0.7');
 }
 
 /* ===== Universal Scroll Reveals ===== */
@@ -127,47 +117,30 @@ function initAboutAnimations() {
     willChange: 'transform, opacity',
   });
 
-  // Label fade up
-  gsap.from('.about__label', {
-    scrollTrigger: { trigger: about, start: 'top 80%' },
-    opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
-    willChange: 'transform, opacity',
-  });
-
-  // Title
   gsap.from('.about__title', {
     scrollTrigger: { trigger: about, start: 'top 80%' },
-    opacity: 0, y: 30, duration: 0.7, delay: 0.1, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 30, duration: 0.7, ease: 'power3.out',
   });
 
-  // Description
   gsap.from('.about__description', {
     scrollTrigger: { trigger: about, start: 'top 85%' },
-    opacity: 0, y: 20, duration: 0.6, delay: 0.2, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 20, duration: 0.6, delay: 0.1, ease: 'power3.out',
   });
 
-  // Interests — staggered fade-up
   gsap.from('.about__interest', {
     scrollTrigger: { trigger: about, start: 'top 85%' },
-    opacity: 0, y: 16, duration: 0.5, stagger: 0.06, delay: 0.3, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 16, duration: 0.5, stagger: 0.06, delay: 0.2, ease: 'power3.out',
   });
 
-  // Stats — counter with fade-up
   gsap.from('.about__stat', {
     scrollTrigger: { trigger: about, start: 'top 85%' },
-    opacity: 0, y: 24, duration: 0.6, stagger: 0.12, delay: 0.4, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 24, duration: 0.6, stagger: 0.1, delay: 0.3, ease: 'power3.out',
     onComplete: initCounterAnimations,
   });
 
-  // CTA
-  gsap.from('.about__cta', {
+  gsap.from('.about__aside', {
     scrollTrigger: { trigger: about, start: 'top 85%' },
-    opacity: 0, y: 16, duration: 0.6, delay: 0.55, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 20, duration: 0.7, delay: 0.2, ease: 'power3.out',
   });
 }
 
@@ -201,37 +174,24 @@ function initSkillsAnimations() {
   const skills = document.querySelector('.skills');
   if (!skills) return;
 
-  // Header elements
-  gsap.from('.skills__label', {
-    scrollTrigger: { trigger: skills, start: 'top 80%' },
-    opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
-    willChange: 'transform, opacity',
-  });
-
   gsap.from('.skills__title', {
     scrollTrigger: { trigger: skills, start: 'top 80%' },
-    opacity: 0, y: 30, duration: 0.7, delay: 0.1, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 28, duration: 0.7, ease: 'power3.out',
   });
 
   gsap.from('.skills__subtitle', {
     scrollTrigger: { trigger: skills, start: 'top 85%' },
-    opacity: 0, y: 20, duration: 0.6, delay: 0.2, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 18, duration: 0.55, delay: 0.1, ease: 'power3.out',
   });
 
-  // Category buttons
   gsap.from('.skills__category', {
     scrollTrigger: { trigger: skills, start: 'top 85%' },
-    opacity: 0, y: 16, duration: 0.5, stagger: 0.06, delay: 0.3, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 14, duration: 0.45, stagger: 0.05, delay: 0.15, ease: 'power3.out',
   });
 
-  // Skill cards — stagger fade-up
   gsap.from('.skill-card', {
     scrollTrigger: { trigger: skills, start: 'top 85%' },
-    opacity: 0, y: 30, duration: 0.6, stagger: 0.08, delay: 0.4, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 24, duration: 0.55, stagger: 0.05, delay: 0.25, ease: 'power3.out',
   });
 }
 
@@ -244,55 +204,40 @@ function initJourneyAnimations() {
   const journey = document.querySelector('.journey');
   if (!journey) return;
 
-  gsap.from('.journey__label', {
-    scrollTrigger: { trigger: journey, start: 'top 80%' },
-    opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
-    willChange: 'transform, opacity',
-  });
-
   gsap.from('.journey__title', {
     scrollTrigger: { trigger: journey, start: 'top 80%' },
-    opacity: 0, y: 30, duration: 0.7, delay: 0.1, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 28, duration: 0.7, ease: 'power3.out',
   });
 
   gsap.from('.journey__subtitle', {
     scrollTrigger: { trigger: journey, start: 'top 85%' },
-    opacity: 0, y: 20, duration: 0.6, delay: 0.2, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 18, duration: 0.55, delay: 0.1, ease: 'power3.out',
   });
 
-  // Timeline items — stagger from both sides
   gsap.utils.toArray('.journey__item').forEach((item, index) => {
     const content = item.querySelector('.journey__content');
     const dot = item.querySelector('.journey__dot');
 
-    // Content slides in from left or right based on position
-    const xPos = index % 2 === 0 ? -40 : 40;
-
     gsap.from(content, {
       scrollTrigger: {
         trigger: item,
-        start: 'top 85%',
+        start: 'top 88%',
         toggleActions: 'play none none none',
       },
-      opacity: 0, x: xPos, duration: 0.7, delay: index * 0.08, ease: 'power3.out',
-      willChange: 'transform, opacity',
-      onComplete: () => {
-        item.classList.add('is-visible');
-      },
+      opacity: 0, y: 24, duration: 0.65, delay: index * 0.05, ease: 'power3.out',
+      onComplete: () => item.classList.add('is-visible'),
     });
 
-    // Dot scales in
-    gsap.from(dot, {
-      scrollTrigger: {
-        trigger: item,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
-      scale: 0, opacity: 0, duration: 0.4, delay: index * 0.08 + 0.15, ease: 'back.out(2)',
-      willChange: 'transform, opacity',
-    });
+    if (dot) {
+      gsap.from(dot, {
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+        scale: 0, opacity: 0, duration: 0.35, delay: index * 0.05 + 0.1, ease: 'back.out(1.6)',
+      });
+    }
   });
 }
 
@@ -307,8 +252,7 @@ function initProjectsAnimations() {
 
   gsap.from('.projects__label', {
     scrollTrigger: { trigger: projects, start: 'top 80%' },
-    opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
-    willChange: 'transform, opacity',
+    opacity: 0, y: 16, duration: 0.5, ease: 'power3.out',
   });
 
   gsap.from('.projects__title', {
@@ -441,29 +385,28 @@ function initSkillsFilter() {
     btn.addEventListener('click', () => {
       const category = btn.dataset.category;
 
-      categoryBtns.forEach((b) => b.classList.remove('is-active'));
+      categoryBtns.forEach((b) => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
 
       skillCards.forEach((card) => {
         const cardCategory = card.dataset.category;
         const shouldShow = category === 'all' || cardCategory === category;
-
-        if (shouldShow) {
-          card.classList.add('is-visible');
-        } else {
-          card.classList.remove('is-visible');
-        }
+        card.classList.toggle('is-visible', shouldShow);
       });
 
-      ScrollTrigger.refresh();
+      if (window.ScrollTrigger) window.ScrollTrigger.refresh();
     });
   });
 }
 
 /* ===== Profile 3D Hover ===== */
 export function initProfile3DHover() {
-  const frame = document.querySelector('.about__image-frame');
-  if (!frame) return;
+  const frame = document.querySelector('.hero__portrait');
+  if (!frame || prefersReducedMotion()) return;
 
   frame.addEventListener('mousemove', (e) => {
     const rect = frame.getBoundingClientRect();
@@ -471,16 +414,14 @@ export function initProfile3DHover() {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
 
-    frame.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    frame.style.boxShadow = `0 20px 60px var(--color-shadow), 0 0 40px var(--color-electric-blue-dim)`;
+    frame.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
   frame.addEventListener('mouseleave', () => {
-    frame.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
-    frame.style.boxShadow = 'none';
+    frame.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
   });
 }
 

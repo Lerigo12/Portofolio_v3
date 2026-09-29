@@ -53,7 +53,7 @@ function checkMobile() {
 
 function initScene(THREE, canvas) {
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x050510, 0.012);
+  scene.fog = new THREE.FogExp2(0x0e0e10, 0.014);
 
   camera = new THREE.PerspectiveCamera(
     isMobile ? 55 : 60,
@@ -70,19 +70,19 @@ function initScene(THREE, canvas) {
   renderer.setPixelRatio(pixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = 0.95;
 
-  scene.add(new THREE.AmbientLight(0x334466, isMobile ? 0.5 : 0.8));
+  scene.add(new THREE.AmbientLight(0x2a2a30, isMobile ? 0.45 : 0.7));
 
-  const p1 = new THREE.PointLight(0x00d4aa, isMobile ? 1 : 2.5, 60);
+  const p1 = new THREE.PointLight(0x2a9d8f, isMobile ? 0.9 : 2, 60);
   p1.position.set(5, 5, 10);
   scene.add(p1);
 
-  const p2 = new THREE.PointLight(0x3b82f6, isMobile ? 0.8 : 1.8, 60);
+  const p2 = new THREE.PointLight(0x1f7a70, isMobile ? 0.5 : 1.1, 55);
   p2.position.set(-5, -3, 8);
   scene.add(p2);
 
-  const p3 = new THREE.PointLight(0xa855f7, isMobile ? 0.5 : 1.2, 50);
+  const p3 = new THREE.PointLight(0x4a4a52, isMobile ? 0.3 : 0.7, 45);
   p3.position.set(0, -5, -5);
   scene.add(p3);
 }
@@ -90,22 +90,22 @@ function initScene(THREE, canvas) {
 function createCentralObject(THREE) {
   const innerGeo = new THREE.IcosahedronGeometry(Math.max(0.01, 3), 2);
   const innerMat = new THREE.MeshStandardMaterial({
-    color: 0x00d4aa, emissive: 0x00d4aa, emissiveIntensity: 0.3,
-    metalness: 0.9, roughness: 0.2, transparent: true, opacity: 0.6,
+    color: 0x2a9d8f, emissive: 0x1f7a70, emissiveIntensity: 0.22,
+    metalness: 0.85, roughness: 0.28, transparent: true, opacity: 0.55,
   });
   centralMesh = new THREE.Mesh(innerGeo, innerMat);
   scene.add(centralMesh);
 
   const wireGeo = new THREE.IcosahedronGeometry(Math.max(0.01, 5), 1);
   const wireMat = new THREE.MeshBasicMaterial({
-    color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.35,
+    color: 0x4db6a8, wireframe: true, transparent: true, opacity: 0.28,
   });
   wireframeMesh = new THREE.Mesh(wireGeo, wireMat);
   scene.add(wireframeMesh);
 
   const glowGeo = new THREE.SphereGeometry(Math.max(0.01, 6), 32, 32);
   const glowMat = new THREE.MeshBasicMaterial({
-    color: 0x3b82f6, transparent: true, opacity: 0.04, side: THREE.BackSide,
+    color: 0x2a9d8f, transparent: true, opacity: 0.035, side: THREE.BackSide,
   });
   scene.add(new THREE.Mesh(glowGeo, glowMat));
 }
@@ -125,9 +125,9 @@ function createParticleField(THREE) {
     positions[i * 3 + 2] = radius * Math.cos(phi);
     const colorChoice = Math.random();
     let r, g, b;
-    if (colorChoice < 0.4) { r = 0; g = 0.83; b = 0.67; }
-    else if (colorChoice < 0.7) { r = 0.23; g = 0.51; b = 0.97; }
-    else { r = 0.66; g = 0.33; b = 0.97; }
+    if (colorChoice < 0.55) { r = 0.16; g = 0.62; b = 0.56; }
+    else if (colorChoice < 0.85) { r = 0.30; g = 0.72; b = 0.66; }
+    else { r = 0.72; g = 0.72; b = 0.74; }
     colors[i * 3] = r;
     colors[i * 3 + 1] = g;
     colors[i * 3 + 2] = b;
@@ -146,14 +146,14 @@ function createParticleField(THREE) {
 
 function createOrbitalRing(THREE) {
   const ringGeo = new THREE.TorusGeometry(Math.max(0.01, 8), Math.max(0.01, 0.03), 16, 100);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0x00d4aa, transparent: true, opacity: 0.5 });
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x2a9d8f, transparent: true, opacity: 0.4 });
   ringMesh = new THREE.Mesh(ringGeo, ringMat);
   ringMesh.rotation.x = Math.PI * 0.4;
   ringMesh.rotation.z = Math.PI * 0.1;
   scene.add(ringMesh);
 
   const ring2Geo = new THREE.TorusGeometry(Math.max(0.01, 10), Math.max(0.01, 0.02), 16, 100);
-  const ring2Mat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.25 });
+  const ring2Mat = new THREE.MeshBasicMaterial({ color: 0x6e6e76, transparent: true, opacity: 0.22 });
   const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
   ring2.rotation.x = Math.PI * 0.6;
   ring2.rotation.y = Math.PI * 0.3;

@@ -1,43 +1,55 @@
 :root {
-  --color-bg: #0a0a0f;
-  --color-bg-elevated: #11111a;
-  --color-surface: #12121a;
-  --color-surface-hover: #1a1a24;
-  --color-deep-black: #050510;
-  --color-dark-navy: #0d0d1e;
-  --color-dark-blue: #141624;
-  --color-electric-blue: #3b82f6;
-  --color-electric-blue-dim: #3b82f633;
-  --color-neon-purple: #a855f7;
-  --color-neon-purple-dim: #a855f733;
-  --color-cyan: #06d6a0;
-  --color-cyan-dim: #06d6a033;
-  --color-primary: #00d4aa;
-  --color-primary-dim: #00d4aa33;
-  --color-secondary: #8b5cf6;
-  --color-text-primary: #fafafa;
-  --color-text-secondary: #a1a1aa;
-  --color-text-muted: #71717a;
-  --color-text-light: #e4e4e7;
-  --color-border: #27273a;
-  --color-border-hover: #3f3f5a;
-  --color-border-subtle: #4a4a6a;
-  --color-shadow: #00000080;
-  --color-shadow-glow: #00d4aa33;
-  --color-shadow-neon: #a855f733;
+  /* Surfaces — off-black zinc family, never pure #000 */
+  --color-bg: #0e0e10;
+  --color-bg-elevated: #161618;
+  --color-surface: #1a1a1d;
+  --color-surface-hover: #222226;
+  --color-deep-black: #0a0a0c;
 
-  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', 'system-ui', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Single accent lock: desaturated teal */
+  --color-primary: #2a9d8f;
+  --color-primary-hover: #34b3a3;
+  --color-primary-dim: rgba(42, 157, 143, 0.16);
+  --color-primary-ink: #0e0e10;
 
-  --fs-display: clamp(4rem, 3.5rem + 4vw, 6rem);
-  --fs-h1: clamp(3rem, 2.5rem + 3vw, 4rem);
-  --fs-h2: clamp(2rem, 1.7rem + 2vw, 2.75rem);
-  --fs-h3: clamp(1.5rem, 1.3rem + 1.5vw, 2rem);
-  --fs-body-large: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
-  --fs-body: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem);
-  --fs-small: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  /* Legacy aliases remapped to primary (kill purple/cyan dual accents) */
+  --color-electric-blue: var(--color-primary);
+  --color-electric-blue-dim: var(--color-primary-dim);
+  --color-neon-purple: var(--color-primary);
+  --color-neon-purple-dim: var(--color-primary-dim);
+  --color-cyan: var(--color-primary);
+  --color-cyan-dim: var(--color-primary-dim);
+  --color-secondary: var(--color-primary);
+  --color-dark-navy: var(--color-bg-elevated);
+  --color-dark-blue: var(--color-surface);
 
+  /* Text */
+  --color-text-primary: #f4f4f2;
+  --color-text-secondary: #a8a8ae;
+  --color-text-muted: #6e6e76;
+  --color-text-light: #e8e8e4;
+
+  /* Borders & shadows (hue-tinted, no pure black glow) */
+  --color-border: #2a2a30;
+  --color-border-hover: #3e3e46;
+  --color-border-subtle: #3a3a42;
+  --color-shadow: rgba(8, 8, 10, 0.55);
+  --color-shadow-glow: var(--color-primary-dim);
+  --color-shadow-neon: transparent;
+
+  /* Typography — Outfit (sans display), no Inter */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --fs-display: clamp(2.75rem, 2rem + 3.5vw, 4.5rem);
+  --fs-h1: clamp(2.25rem, 1.8rem + 2.2vw, 3.25rem);
+  --fs-h2: clamp(1.75rem, 1.45rem + 1.4vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.8vw, 1.65rem);
+  --fs-body-large: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+  --fs-body: clamp(0.9375rem, 0.9rem + 0.25vw, 1.0625rem);
+  --fs-small: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+  --fs-base: 1rem;
   --fs-xs: 0.7rem;
   --fs-sm: 0.8125rem;
   --fs-md: 1rem;
@@ -48,24 +60,27 @@
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --space-4xl: 6rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 7rem;
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  /* Shape lock: soft 12px system; pills only on buttons */
+  --radius-sm: 6px;
+  --radius-md: 10px;
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-full: 9999px;
 
   --shadow-sm: 0 1px 2px var(--color-shadow);
-  --shadow-md: 0 4px 12px var(--color-shadow);
-  --shadow-lg: 0 12px 32px var(--color-shadow);
-  --shadow-xl: 0 24px 64px var(--color-shadow);
-  --shadow-neon: 0 0 40px var(--color-shadow-glow);
+  --shadow-md: 0 6px 20px var(--color-shadow);
+  --shadow-lg: 0 16px 40px var(--color-shadow);
+  --shadow-xl: 0 28px 64px var(--color-shadow);
+  --shadow-neon: none;
+  --shadow-glow: 0 8px 32px var(--color-primary-dim);
 
-  --transition-fast: 150ms ease-out;
-  --transition-base: 250ms ease-out;
-  --transition-slow: 400ms ease-out;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms var(--ease-out);
+  --transition-base: 280ms var(--ease-out);
+  --transition-slow: 450ms var(--ease-out);
   --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   --z-dropdown: 100;
@@ -73,9 +88,32 @@
   --z-modal: 300;
   --z-toast: 400;
   --z-tooltip: 500;
+  --z-grain: 60;
 
-  --container-max: 1280px;
-  --container-padding: var(--space-lg);
+  --container-max: 1180px;
+  --container-padding: clamp(1.25rem, 4vw, 2rem);
+  --header-height: 68px;
+}
 
-  --header-height: 72px;
+/* Light mode — same accent, inverted surfaces */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f3f3f0;
+    --color-bg-elevated: #ffffff;
+    --color-surface: #ebebe6;
+    --color-surface-hover: #e2e2dc;
+    --color-deep-black: #e8e8e4;
+    --color-primary: #1f7a70;
+    --color-primary-hover: #18665e;
+    --color-primary-dim: rgba(31, 122, 112, 0.12);
+    --color-primary-ink: #f3f3f0;
+    --color-text-primary: #141416;
+    --color-text-secondary: #4a4a52;
+    --color-text-muted: #72727a;
+    --color-text-light: #2a2a30;
+    --color-border: #d4d4ce;
+    --color-border-hover: #b8b8b0;
+    --color-border-subtle: #c8c8c0;
+    --color-shadow: rgba(20, 20, 24, 0.1);
+  }
 }

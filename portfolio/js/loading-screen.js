@@ -74,12 +74,17 @@ export function initNavbar() {
   function closeMobileMenu() {
     navToggle.setAttribute('aria-expanded', 'false');
     navMobile.classList.remove('is-open');
+    navMobile.hidden = true;
+    document.body.style.overflow = '';
   }
 
   navToggle.addEventListener('click', () => {
     const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    navMobile.classList.toggle('is-open');
+    const nextOpen = !isOpen;
+    navToggle.setAttribute('aria-expanded', String(nextOpen));
+    navMobile.classList.toggle('is-open', nextOpen);
+    navMobile.hidden = !nextOpen;
+    document.body.style.overflow = nextOpen ? 'hidden' : '';
   });
 
   mobileLinks.forEach((link) => {

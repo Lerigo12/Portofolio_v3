@@ -5,7 +5,6 @@
 import { initLoadingScreen, initNavbar, updateActiveNav } from './loading-screen.js';
 import { initAnimations, initScrollAnimations, initProfile3DHover } from './animation.js';
 import { initThreeScene } from './three-scene.js';
-import { initCursor } from './cursor.js';
 import { initProjectDetail } from './project-detail.js';
 import { initTechWorld } from './tech-world.js';
 import { initContactForm } from './contact.js';
@@ -18,11 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initScrollAnimations();
     initThreeScene();
-    initCursor();
     initProfile3DHover();
     initProjectDetail();
     initTechWorld();
     initContactForm();
     initBackToTop();
+
+    if (window.lucide?.createIcons) {
+      window.lucide.createIcons();
+    }
   });
 });

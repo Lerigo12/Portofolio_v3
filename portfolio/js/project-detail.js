@@ -149,10 +149,16 @@ export function closeModal() {
 function initProjectDetail() {
   document.addEventListener('click', (e) => {
     const viewBtn = e.target.closest('.project-card__actions .btn--primary');
-    if (viewBtn) {
-      const card = viewBtn.closest('.project-card');
-      const projectId = card?.dataset.projectId || '';
-      if (projectId) openModal(projectId);
+    if (!viewBtn) return;
+
+    const card = viewBtn.closest('.project-card');
+    const projectId = card?.dataset.projectId || '';
+    const known = projectsData.some((p) => p.id === projectId);
+
+    // External links with href keep normal navigation; only known IDs open modal when no real destination
+    if (known && (!viewBtn.getAttribute('href') || viewBtn.getAttribute('href') === '#')) {
+      e.preventDefault();
+      openModal(projectId);
     }
   });
 }
